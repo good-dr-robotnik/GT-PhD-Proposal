@@ -1,0 +1,149 @@
+\documentclass[12pt]{gatech-thesis}
+\usepackage{amsmath,amssymb,latexsym,float,epsfig,subfigure}
+
+%%
+%% This example is adapted from ucthesis.tex, a part of the
+%% UCTHESIS class package...
+%%
+
+\title{The Elements of Thesis} %% If you want to specify a linebreak
+                               %% in the thesis title, you MUST use
+                               %% \protect\\ instead of \\, as \\ is a
+                               %% fragile command that \MakeUpperCase
+                               %% will break!
+\author{Perry H. Disdainful}
+\department{School of Industrial and Systems Engineering}
+
+%% Can have up to six readers, plus principaladvisor and
+%% committeechair. All have the form
+%%
+%%  \reader{Name}[Department][Institution]
+%%
+%% The second and third arguments are optional, but if you wish to
+%% supply the third, you must supply the second. Department defaults
+%% to the department defined above and Institution defaults to Georgia
+%% Institute of Technology.
+
+\principaladvisor{Professor Alpha Betic}
+\coadvisor{Professor Terry Bull}
+\committeechair{Professor Ignatious Arrogant}
+\firstreader{Professor General Reference}[School of Mathematics]
+\secondreader{Professor Ivory Insular}[Department of Computer Science and Operations Research][North Dakota State University]
+\thirdreader{Professor Earl Grey}
+\fourthreader{Professor John Smith}
+\fifthreader{Professor Jane Doe}[Another Department With a Long Name][Another Institution]
+
+
+%\setcounter{secnumdepth}{2}
+\degree{Doctor of Philosophy}
+
+%% Set \listmajortrue below, then uncomment and set this for
+%% interdisciplinary PhD programs so that the title page says
+%% ``[degree] in [major]'' and puts the department at the bottom of
+%% the page, rather than saying ``[degree] in the [department]''
+
+%% \major{Algorithms, Combinatorics, and Optimization} 
+
+\copyrightyear{2015}
+\submitdate{September 2015}  % Must be the month and year of graduation,
+	                         % not thesis approval! As of 2010, this means
+	                         % this text must be May, August, or December
+	                         % followed by the year.
+
+%% The date the last committee member signs the thesis form. Printed
+%% on the approval page.
+\approveddate{1 July 2010}
+
+\bibfiles{example-thesis}
+
+%% The following are the defaults, unless uncommented
+%%    \titlepagetrue
+%%    \signaturepagetrue
+    \copyrighttrue
+%%    \figurespagetrue
+%%    \tablespagetrue
+%%    \contentspagetrue
+	\epigraphheadingfalse
+%%    \dedicationheadingfalse
+%%    \bibpagetrue
+    \thesisproposaltrue
+%%    \strictmarginstrue
+    \dissertationtrue
+%%    \listmajorfalse
+%%    \multivolumefalse
+
+
+% Specify the sections/chapters you wish to present/compile. Simply comment out any lines to hide their section. 
+% Be sure to populate this list with any additional chapters and sections that you add later.
+\includeonly{ %
+	% Preliminary
+	%
+	./Content/Preliminary/Epigraph, %
+	./Content/Preliminary/Dedication, %
+%	./Content/Preliminary/Preface, %
+	./Content/Preliminary/Acknowledgements, %
+	./Content/Preliminary/Summary, %
+	%
+	%% Body
+	%
+	./Content/Body/Introduction, %
+	./Content/Body/PreviousWork, %,
+	./Content/Body/Conclusion %
+	%
+	%% Postliminary
+	%
+	./Content/Postliminary/Appendices/AncillaryStuff, %
+	./Content/Postliminary/Appendices/AncillaryStuff2, %
+	./Content/Postliminary/Vita, %
+	%
+	%% Abstract
+	%
+	./Content/Abstract/Abstract
+	}
+
+
+\begin{document}
+\bibliographystyle{gatech-thesis}
+%%
+
+\begin{preliminary}
+
+\include{./Content/Preliminary/Epigraph}			% Optional, uncomment if used.
+\include{./Content/Preliminary/Dedication}			% Optional, uncomment if used.
+\include{./Content/Preliminary/Preface}			% Optional, uncomment if used.
+\include{./Content/Preliminary/Acknowledgements}
+
+\contents								% print table of contents, figures and tables here.
+										% if you need a "List of Symbols or Abbreviations" look into
+										% gatech-thesis-gloss.sty.
+\include{./Content/Preliminary/Summary}
+\end{preliminary}
+
+%%  Main content is added in this section. Recommend to define Parts (if used) in this document, as opposed to in chapter files.
+
+\include{./Content/Body/Introduction}
+\include{./Content/Body/PreviousWork}
+\include{./Content/Body/Conclusion}
+
+%%
+
+\begin{postliminary}
+
+\appendix 								%Next chapters are all appendices
+\include{./Content/Postliminary/Appendices/AncillaryStuff}
+\include{./Content/Postliminary/Appendices/AncillaryStuff2}
+
+\references
+\postfacesection{Index}{%
+	%%             ... generate an index here
+	%%         look into gatech-thesis-index.sty
+}
+
+\include{./Content/Postliminary/Vita}
+
+\end{postliminary}
+
+\include{./Content/Abstract/Abstract}
+
+
+\end{document}
